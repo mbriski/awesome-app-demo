@@ -1,0 +1,25 @@
+version: '3.3'
+
+services:
+  apps:
+    build:
+      context: .
+    container_name: docker-app
+    working_dir: /var/www/html
+    tty: true
+    restart: always
+    network_mode: "host"
+      #  depends_on:
+      #- database
+    volumes:
+      - ./apps:/var/www/html
+      - ./config/php/php.ini:/usr/local/etc/php/conf.d/local.ini
+      - ./config/vhosts:/etc/apache2/sites-enabled
+    environment:
+      DB_PORT: ${DB_PORT}
+      DB_HOST: ${DB_HOST}
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "${HOST_HTTP_PORT}:80"
