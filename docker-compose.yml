@@ -8,9 +8,6 @@ services:
     working_dir: /var/www/html
     tty: true
     restart: always
-    network_mode: "host"
-      #  depends_on:
-      #- database
     volumes:
       - ./apps:/var/www/html
       - ./config/php/php.ini:/usr/local/etc/php/conf.d/local.ini
