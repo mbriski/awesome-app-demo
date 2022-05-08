@@ -17,7 +17,8 @@ Awesome app3 can read from the database and display the output.
 
 ## Setup
 
-To build and start the app containers up run
+Update .env file with database host
+Build and start the app containers up run
 
 ```bash
 docker-compose up -d --build
