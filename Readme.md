@@ -17,7 +17,7 @@ Awesome app3 can read from the database and display the output.
 
 ## Setup
 
-Update .env file with database host
+Update .env file with database host.
 Build and start the app containers up run
 
 ```bash
